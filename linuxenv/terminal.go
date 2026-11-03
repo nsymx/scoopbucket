@@ -28,7 +28,7 @@ func ShellPrompt(input io.Reader, NewPrompt string) bool {
 	reader := bufio.NewReader(input)
 
 	for {
-		logger.BasicLogger.Print(styles.BasicTextStyle.Render(NewPrompt))
+		logger.CompactLogger.Print(styles.BasicTextStyle.Render(NewPrompt))
 
 		userInput, _ := reader.ReadString('\n')
 		userInput = strings.ToLower(strings.TrimSpace(userInput))
@@ -39,7 +39,9 @@ func ShellPrompt(input io.Reader, NewPrompt string) bool {
 		case "n", "":
 			return false
 		default:
-			logger.BasicLogger.Warn("invalid input, please type y or n...")
+			fmt.Println()
+			logger.CompactLogger.Warn("invalid input, please type y or n...")
+			fmt.Println()
 		}
 	}
 }
