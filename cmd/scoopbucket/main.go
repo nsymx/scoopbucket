@@ -6,6 +6,7 @@ import (
 	"strings"
 
 	"charm.land/lipgloss/v2"
+	"github.com/nsymx/scoopbucket/internal/logger"
 	"github.com/nsymx/scoopbucket/internal/styles"
 	"github.com/nsymx/scoopbucket/linuxenv"
 )
@@ -37,4 +38,10 @@ func main() {
 
 	linuxenv.ClearScreen()
 	greeter()
+
+	if !linuxenv.ShellPrompt(os.Stdin, "Do you or Do u not? [y/n]:") {
+		os.Exit(0)
+	}
+
+	logger.CompactLogger.Info("Holy shit bernadette relax")
 }
