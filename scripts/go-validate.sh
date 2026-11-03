@@ -4,6 +4,10 @@ BLUE='\033[0;34m'
 RED='\033[0;31m'
 NC='\033[0m'
 
+logger_info() {
+	echo -e "${BLUE}[INFO]${NC} $1" >&2
+}
+
 logger_error() {
 	echo -e "${RED}[ERR]${NC} $1" >&2
 }
@@ -31,9 +35,12 @@ if ! command -v "go" >/dev/null 2>&1; then
 fi
 
 if [[ -f "./LICENSE" ]]; then
+	logger_info ":: Starting validation scan"
 	validate_license
 fi
 
 if command -v "golangci-lint" >/dev/null 2>&1; then
 	golangci-lint run --fix
 fi
+
+logger_info ":: Validation scan done"
