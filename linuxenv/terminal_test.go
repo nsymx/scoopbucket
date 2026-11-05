@@ -60,8 +60,8 @@ func TestPromptInvalidInput(t *testing.T) {
 func silenceLogger(t *testing.T, output *bytes.Buffer) {
 	t.Helper()
 
-	logger.BasicLogger.SetOutput(output)
+	logger.Standard.SetOutput(output)
 	t.Cleanup(func() {
-		logger.BasicLogger.SetOutput(os.Stderr)
+		logger.Standard.SetOutput(os.Stderr)
 	})
 }

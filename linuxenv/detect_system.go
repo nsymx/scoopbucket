@@ -10,8 +10,8 @@ import (
 
 func DetectOS() {
 	if runtime.GOOS != "linux" || runtime.GOARCH != "amd64" {
-		logger.BasicLogger.Error("Unsupported operating system detected")
-		logger.BasicLogger.Fatal("Support available for linux-amd64 only")
+		logger.Standard.Error("Unsupported operating system detected")
+		logger.Standard.Fatal("Support available for linux-amd64 only")
 	}
 }
 
