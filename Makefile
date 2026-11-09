@@ -1,4 +1,5 @@
 .PHONY: help build update clean validate
+
 BINARY_NAME := scoopbucket
 GO := go
 GOFLAGS := -v
