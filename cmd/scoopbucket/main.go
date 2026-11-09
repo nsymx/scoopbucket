@@ -6,8 +6,7 @@ import (
 	"strings"
 
 	"charm.land/lipgloss/v2"
-	"github.com/nsymx/scoopbucket/internal/styles"
-	"github.com/nsymx/scoopbucket/linuxenv"
+	"github.com/nsymx/scoopbucket/termenv"
 )
 
 var (
@@ -18,23 +17,23 @@ var (
 
 func greeter() {
 	lipgloss.Println(
-		styles.GreeterStyle.Render(
-			styles.EnumeratorStyle.Render(enumerator),
-			styles.BasicTextStyle.Render(
-				"Welcome to"), styles.AlphaTextStyle.Render(name), "!"))
+		termenv.GreeterStyle.Render(
+			termenv.EnumeratorStyle.Render(enumerator),
+			termenv.BasicTextStyle.Render(
+				"Welcome to"), termenv.AlphaTextStyle.Render(name), "!"))
 }
 
 func main() {
-	linuxenv.DetectOS()
+	termenv.DetectOS()
 	versionFlag := flag.Bool("version", false, "Show latest version")
 
 	flag.Parse()
 	if *versionFlag {
-		lipgloss.Println(styles.BasicTextStyle.Render(
+		lipgloss.Println(termenv.BasicTextStyle.Render(
 			name), "-", strings.TrimSpace(version))
 		os.Exit(0)
 	}
 
-	linuxenv.ClearScreen()
+	termenv.ClearScreen()
 	greeter()
 }

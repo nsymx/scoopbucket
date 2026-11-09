@@ -1,17 +1,15 @@
-package linuxenv
+package termenv
 
 import (
 	"fmt"
 	"os"
 	"runtime"
-
-	"github.com/nsymx/scoopbucket/internal/logger"
 )
 
 func DetectOS() {
 	if runtime.GOOS != "linux" || runtime.GOARCH != "amd64" {
-		logger.Standard.Error("Unsupported operating system detected")
-		logger.Standard.Fatal("Support available for linux-amd64 only")
+		StandardLogger.Error("Unsupported operating system detected")
+		StandardLogger.Fatal("Support available for linux-amd64 only")
 	}
 }
 

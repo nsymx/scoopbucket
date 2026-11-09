@@ -1,4 +1,4 @@
-package logger
+package termenv
 
 import (
 	"os"
@@ -6,12 +6,12 @@ import (
 	"github.com/charmbracelet/log"
 )
 
-var Standard = log.NewWithOptions(os.Stderr, log.Options{
+var StandardLogger = log.NewWithOptions(os.Stderr, log.Options{
 	ReportTimestamp: true,
 	Prefix:          ":",
 })
 
-var Compact = log.NewWithOptions(os.Stderr, log.Options{
+var CompactLogger = log.NewWithOptions(os.Stderr, log.Options{
 	ReportTimestamp: false,
 	Prefix:          ":",
 })

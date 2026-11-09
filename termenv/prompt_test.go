@@ -1,24 +1,18 @@
-package linuxenv
+package termenv
 
 import (
 	"bytes"
 	"os"
 	"strings"
 	"testing"
-
-	"github.com/nsymx/scoopbucket/internal/logger"
 )
-
-func TestClearScreen(t *testing.T) {
-	ClearScreen()
-}
 
 // Test prompt when user input is true
 func TestPromptInputYes(t *testing.T) {
 	var output bytes.Buffer
 	silenceLogger(t, &output)
 
-	confirmed := ShellPrompt(strings.NewReader("y\n"), "Yes or No?")
+	confirmed := Prompt(strings.NewReader("y\n"), "Yes or No?")
 
 	if !confirmed {
 		t.Fatal("expected y to confirm")
@@ -37,7 +31,7 @@ func TestPromptEmptyInputNo(t *testing.T) {
 			var output bytes.Buffer
 			silenceLogger(t, &output)
 
-			confirmed := ShellPrompt(strings.NewReader(input), "Yes or No?")
+			confirmed := Prompt(strings.NewReader(input), "Yes or No?")
 			if confirmed {
 				t.Fatalf("expected %q to cancel", input)
 			}
@@ -51,7 +45,7 @@ func TestPromptInvalidInput(t *testing.T) {
 
 	silenceLogger(t, &output)
 
-	confirmed := ShellPrompt(strings.NewReader("maybe\ny\n"), "Yes or No?")
+	confirmed := Prompt(strings.NewReader("maybe\ny\n"), "Yes or No?")
 	if !confirmed {
 		t.Fatal("expected y after invalid input to confirm")
 	}
@@ -60,8 +54,8 @@ func TestPromptInvalidInput(t *testing.T) {
 func silenceLogger(t *testing.T, output *bytes.Buffer) {
 	t.Helper()
 
-	logger.Standard.SetOutput(output)
+	StandardLogger.SetOutput(output)
 	t.Cleanup(func() {
-		logger.Standard.SetOutput(os.Stderr)
+		StandardLogger.SetOutput(os.Stderr)
 	})
 }

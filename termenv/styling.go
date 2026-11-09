@@ -1,35 +1,29 @@
-package styles
+package termenv
 
 import (
 	"charm.land/lipgloss/v2"
 )
 
-// Define colors
-var (
-	colorText  = lipgloss.Color("#FFFFFF")
-	colorAlpha = lipgloss.Color("#1016cf")
-)
-
 // Basic text style
 var BasicTextStyle = lipgloss.NewStyle().
 	Bold(true).
-	Foreground((colorText))
+	Foreground((ColorText))
 
 // Alpha text style
 var AlphaTextStyle = lipgloss.NewStyle().
 	Bold(true).
-	Foreground((colorAlpha))
+	Foreground((ColorAlpha))
 
 // Greeter style
 var GreeterStyle = lipgloss.NewStyle().
 	Bold(true).
-	Foreground((colorText)).
+	Foreground((ColorText)).
 	BorderStyle(lipgloss.HiddenBorder()).
-	BorderForeground((colorAlpha)).
+	BorderForeground((ColorAlpha)).
 	MarginTop(1).
 	MarginLeft(1)
 
 // Simple enum style
 var EnumeratorStyle = lipgloss.NewStyle().
 	Bold(true).
-	Foreground((colorAlpha))
+	Foreground((ColorAlpha))
