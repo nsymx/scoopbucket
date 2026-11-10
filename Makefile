@@ -2,9 +2,8 @@
 
 BINARY_NAME := scoopbucket
 GO := go
-GOFLAGS := -v
-VERSION ?= $(shell cat .version/latest 2>/dev/null || echo "latest")
-BUILD_DIR := ./bin
+# GOFLAGS := -v
+# VERSION ?= $(shell cat .version/latest 2>/dev/null || echo "latest")
 VALIDATION_SCRIPT := ./scripts/go-validate.sh
 
 help:
