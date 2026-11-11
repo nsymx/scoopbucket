@@ -15,7 +15,8 @@ From you project's root directory, run the following:
 go get github.com/nsymx/scoopbucket
 ```
 
-To use inside your project, add it to your imports:
+### Usage
+To use the package `termenv` inside your project, add it to your imports:
 ```go
 package main
 
