@@ -16,12 +16,13 @@ go get github.com/nsymx/scoopbucket
 ```
 
 ### Usage
-To use the package `termenv` inside your project, add it to your imports:
+At the momment, the only available package is `termenv`. \
+To use it inside your project, add it to your imports:
 ```go
 package main
 
 import (
-       "github.com/nsymx/scoopbucket"
+       "github.com/nsymx/scoopbucket/termenv"
 )
 ```
 
