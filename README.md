@@ -12,7 +12,7 @@ Reusable code and assets for [Go](https://go.dev) projects.
 ### Installation
 From you project's root directory, run the following:
 ```bash
-go get github.com/nsymx/scoopbucket/termenv
+go get github.com/nsymx/scoopbucket
 ```
 
 To use inside your project, add it to your imports:
@@ -20,7 +20,7 @@ To use inside your project, add it to your imports:
 package main
 
 import (
-       "github.com/nsymx/scoopbucket/termenv"
+       "github.com/nsymx/scoopbucket"
 )
 ```
 
