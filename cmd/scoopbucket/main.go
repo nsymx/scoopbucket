@@ -12,7 +12,7 @@ import (
 var (
 	name    = "scoopbucket"
 	version = "dev"
-	url     = "github.com/nsymx/scoopbucket"
+	//url     = "github.com/nsymx/scoopbucket"
 )
 
 func greeter() {
