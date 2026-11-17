@@ -27,3 +27,8 @@ var GreeterStyle = lipgloss.NewStyle().
 var EnumeratorStyle = lipgloss.NewStyle().
 	Bold(true).
 	Foreground((ColorAlpha))
+
+// Custom error style
+var ErrorStyle = lipgloss.NewStyle().
+	Bold(true).
+	Foreground((ColorError))
