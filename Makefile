@@ -15,12 +15,12 @@ help:
 	@echo "  make install       - Build/install the binary in GOBIN"
 	@echo "  make clean         - Cleanup build artifacts"
 	@echo "  make update        - Update module dependencies"
-	@echo "  make valiiate      - Run code and LICENSE validation"
+	@echo "  make validate      - Run code and LICENSE validation"
 	@echo "  make bump-version  - Create new tag/release automatically via workflow"
 
 build:
 	@echo ":: Building $(BINARY_NAME)..."
-	@mkdir -p $(BUILD_DIR)
+	@mkdir -p $(BUILD_DIR)t
 	$(GO) build $(GOFLAGS) -ldflags="-X main.version=$(VERSION)" -o $(BUILD_DIR)/$(BINARY_NAME) ./cmd/$(BINARY_NAME)
 
 install:

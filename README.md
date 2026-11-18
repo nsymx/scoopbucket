@@ -1,28 +1,30 @@
 ## scoopbucket
+
 Reusable code and assets for [Go](https://go.dev) projects.
 
 > [!NOTE]
-> - Type `make help` to see usage for `Makefile`
+> Type `make help` to see usage for the `Makefile`.
 
 ### Requirements
-- Operating system : Linux 
-- Architecture     : amd64 / x86_64
+
+- Operating system: Linux
+- Architecture: amd64 / x86_64
 
 ### Installation
-From you project's root directory, run the following:
+
+From your project's root directory, run:
+
 ```bash
 go get github.com/nsymx/scoopbucket
 ```
 
 ### Usage
-At the momment, the only available package is `termenv`. \
-To use it inside your project, add it to your imports:
-```go
-package main
 
-import (
-       "github.com/nsymx/scoopbucket/termenv"
-)
+The `termenv` package provides terminal helpers, styles, colors, and loggers.
+Import it in your Go project:
+
+```go
+import "github.com/nsymx/scoopbucket/termenv"
 ```
 
-> This section needs expansion...
+See the [`termenv` package guide](docs/termenv.md) to learn more.

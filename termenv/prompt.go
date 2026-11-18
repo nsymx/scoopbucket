@@ -13,7 +13,7 @@ func Prompt(input io.Reader, NewPrompt string) bool {
 	for {
 		CompactLogger.Print(BasicTextStyle.Render(NewPrompt))
 
-		userInput, _ := reader.ReadString('\n')
+		userInput, err := reader.ReadString('\n')
 		userInput = strings.ToLower(strings.TrimSpace(userInput))
 
 		switch userInput {
@@ -22,6 +22,10 @@ func Prompt(input io.Reader, NewPrompt string) bool {
 		case "n", "":
 			return false
 		default:
+			if err != nil {
+				return false
+			}
+
 			fmt.Println()
 			CompactLogger.Warn("invalid input, please type y or n...")
 			fmt.Println()
