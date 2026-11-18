@@ -27,4 +27,4 @@ Import it in your Go project:
 import "github.com/nsymx/scoopbucket/termenv"
 ```
 
-See the [`termenv` package guide](docs/termenv.md) to learn more.
+See the [`termenv` package guide](https://github.com/nsymx/scoopbucket/blob/main/docs/termenv-guide.md) to learn more.
