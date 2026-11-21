@@ -8,7 +8,8 @@ Reusable code and assets for [Go](https://go.dev) projects.
 ### Requirements
 
 - Operating system: Linux
-- Architecture: amd64 / x86_64
+- Architecture:     amd64 / x86_64
+- Go version:       At least version 1.27.0
 
 ### Installation
 
