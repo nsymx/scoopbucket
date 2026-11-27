@@ -8,7 +8,6 @@ import (
 	"testing"
 )
 
-// Test prompt when user input is true
 func TestPromptInputYes(t *testing.T) {
 	var output bytes.Buffer
 	silenceLogger(t, &output)
@@ -20,7 +19,6 @@ func TestPromptInputYes(t *testing.T) {
 	}
 }
 
-// Test prompt when user input is empty or false
 func TestPromptEmptyInputNo(t *testing.T) {
 	tests := map[string]string{
 		"no":    "n\n",
@@ -40,7 +38,6 @@ func TestPromptEmptyInputNo(t *testing.T) {
 	}
 }
 
-// Test prompt when user input is invalid
 func TestPromptInvalidInput(t *testing.T) {
 	var output bytes.Buffer
 
